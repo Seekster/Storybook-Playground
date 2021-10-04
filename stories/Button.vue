@@ -2,15 +2,34 @@
   <button type="button" :class="classes" @click="onClick" :style="style">
     {{ label }}
   </button>
+  <q-btn>
+    {{ label }}
+  </q-btn>
 </template>
 
 <script lang="ts">
 import './button.css'
-import { reactive, computed } from 'vue'
+import { Options, Vue } from 'vue-class-component'
 
-export default {
-  name: 'my-button',
-
+class Props {
+  label!: {
+    type: string
+    required: true
+  }
+  primary: {
+    type: boolean
+    default: false
+  }
+  size: {
+    type: string
+    default: ''
+  }
+  backgroundColor: {
+    type: string
+    default: ''
+  }
+}
+@Options({
   props: {
     label: {
       type: String,
@@ -30,25 +49,45 @@ export default {
       type: String
     }
   },
+  emits: ['click']
+})
+export default class MyButton extends Vue.with(Props) {
+  // props: {
+  //   label: {
+  //     type: String,
+  //     required: true
+  //   },
+  //   primary: {
+  //     type: Boolean,
+  //     default: false
+  //   },
+  //   size: {
+  //     type: String,
+  //     validator: function (value) {
+  //       return ['small', 'medium', 'large'].indexOf(value) !== -1
+  //     }
+  //   },
+  //   backgroundColor: {
+  //     type: String
+  //   }
+  // },
 
-  emits: ['click'],
+  // emits: ['click'],
 
-  setup(props, { emit }) {
-    props = reactive(props)
+  get classes() {
     return {
-      classes: computed(() => ({
-        'storybook-button': true,
-        'storybook-button--primary': props.primary,
-        'storybook-button--secondary': !props.primary,
-        [`storybook-button--${props.size || 'medium'}`]: true
-      })),
-      style: computed(() => ({
-        backgroundColor: props.backgroundColor
-      })),
-      onClick() {
-        emit('click')
-      }
+      'storybook-button': true,
+      'storybook-button--primary': this.primary,
+      'storybook-button--secondary': !this.primary,
+      [`storybook-button--${this.size || 'medium'}`]: true
     }
+  }
+  get style() {
+    return { backgroundColor: this.backgroundColor }
+  }
+
+  onClick() {
+    this.$emit('click')
   }
 }
 </script>
