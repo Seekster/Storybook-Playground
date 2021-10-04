@@ -1,6 +1,6 @@
 <template>
   <q-page class="row items-center justify-evenly">
-    <!--<MyButton />-->
+    <MyButton />
     <example-component
       title="Example component"
       active
@@ -14,10 +14,10 @@
 import { Todo, Meta } from 'components/models'
 import ExampleComponent from 'components/ClassComponent.vue'
 import { Vue, Options } from 'vue-class-component'
-// import MyButton from 'src/stories/Button.vue'
+import MyButton from 'src/stories/Button.vue'
 
 @Options({
-  components: { ExampleComponent }
+  components: { ExampleComponent, MyButton }
 })
 export default class PageIndex extends Vue {
   todos: Todo[] = [

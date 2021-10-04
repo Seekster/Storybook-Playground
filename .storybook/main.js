@@ -1,3 +1,4 @@
+const path = require('path')
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
@@ -15,6 +16,12 @@ module.exports = {
       use: ['style-loader', 'css-loader', 'sass-loader'],
       include: path.resolve(__dirname, '../')
     })
+    // config.resolve.plugins = [
+    //   ...(config.resolve.plugins || []),
+    //   new TsconfigPathsPlugin({
+    //     extensions: config.resolve.extensions
+    //   })
+    // ]
 
     // Return the altered config
     return config

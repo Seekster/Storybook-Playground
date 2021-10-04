@@ -1,8 +1,8 @@
 <template>
   <!-- :class="classes" @click="onClick" :style="style"-->
-  <button type="button">
+  <q-btn type="button">
     {{ label }}
-  </button>
+  </q-btn>
 </template>
 
 <script lang="ts">
