@@ -27,6 +27,7 @@
     "@storybook/addon-actions": "^6.3.9",
     "@storybook/addon-essentials": "^6.3.9",
     "@storybook/addon-links": "^6.3.9",
+    "@storybook/preset-typescript": "^3.0.0",
     "@storybook/vue": "^6.3.9",
     "@types/node": "^12.20.21",
     "@typescript-eslint/eslint-plugin": "^4.16.1",
@@ -35,6 +36,9 @@
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-vue": "^7.0.0",
+    "fork-ts-checker-webpack-plugin": "^6.3.3",
+    "prettier": "^2.4.1",
+    "ts-loader": "^9.2.6",
     "vue-loader": "^15.9.8"
   },
   "browserslist": [

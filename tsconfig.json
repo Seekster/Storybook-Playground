@@ -1,8 +1,19 @@
 {
   "extends": "@quasar/app/tsconfig-preset",
+
   "compilerOptions": {
+    "target": "es2016",
     "baseUrl": ".",
     "experimentalDecorators": true,
-    "useDefineForClassFields": true
-  }
+    "useDefineForClassFields": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }
