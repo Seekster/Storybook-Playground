@@ -1,9 +1,12 @@
 {
   "name": "storybook-playground",
   "version": "0.0.1",
+  "license": "MIT",
+  "main": "storybook-static/index.js",
   "description": "A Quasar Framework app",
   "productName": "Quasar App",
-  "author": "MrDiNz <poo.hu@hotmail.com>",
+  "author": "",
+  "repository":"https://github.com/Seekster/Storybook-Playground"
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.ts,.vue ./",

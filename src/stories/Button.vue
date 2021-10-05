@@ -1,6 +1,5 @@
 <template>
-  <!-- :class="classes" @click="onClick" :style="style"-->
-  <q-btn type="button">
+  <q-btn type="button" :class="classes" @click="onClick" :style="style">
     {{ label }}
   </q-btn>
 </template>
@@ -9,7 +8,6 @@
 import './button.css'
 import { reactive, computed } from 'vue'
 import { Vue, Options, prop } from 'vue-class-component'
-
 class Prop {
   label!: ''
   primary?: false
